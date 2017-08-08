@@ -1,0 +1,8 @@
+#window, #results{
+  background-color: #b4ede4;
+  border: solid grey thin;
+  box-sizing: border-box;
+  margin: 20px 0;
+  width: 440px;
+  height: 50px;
+}
