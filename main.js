@@ -23,48 +23,65 @@ let op = ["C", ".", "=", "+", "-", "x", "/"];
 //   var b = "3+2/-2";
 //   console.log(eval(b));
 
+// NOTE: Setup
 const calcButton = document.querySelector(".buttons");
+const results = document.getElementById("results");
+const win = document.getElementById("window");
+
+//this is my single memory
+let memry = [];
 let a = [];
-let win = document.getElementById("window");
-let results = document.getElementById("results");
+let b = [];
+let newarray = [];
 
 calcButton.addEventListener("click", toDisplay, false);
 
+// NOTE: Functions in use
 // display what was clicked in a separate teal window, except C and =
 function toDisplay(kitten){
-
-
+  let array = [];
   if(kitten.target !== kitten.currentTarget && kitten.target.id !== "="){
+    //to display
     win.append(kitten.target.id);
     a.push(kitten.target.id);
-    console.log(a);
+    b.push(kitten.target.id);
 
+    // to brain
+    if (kitten.target.className == "op"){
+      let number = b.splice(0, b.length-1);
+      let operator = b.splice(0, 1);
+      memry.push(number);
+      memry.push(operator);
+      console.log(JSON.stringify(memry));
+    }
   } else {
-    // gets me out of this function into another function
-    console.log(a);
-    parsingFunction(a);
+    recalibrateArray(memry)
+    return a;
+    }
   }
-}
+
 
 // NOTE: Following lines are only for a specific case of array.length = 3 and addition
-function parsingFunction(a){
-  let k = a[0];
-  let c = a[2];
+function recalibrateArray(memry){
+  for (let i = 0; i < memry.length; i++){
+    console.log(memry[i]);
+    let sum= [];
 
-  add(k,c)
+    for (let j = 0; j < memry[i].length; j++){
+      sum += memry[i][j];
+      console.log(sum);
+
+    }
+    newarray.push(sum);
+  }
+  console.log(newarray);
 }
 
 
 // NOTE: Individual arithmetic functions
-function add(k,c){
-  let s = Number(k) + Number(c);
-  console.log(Number(k));
-  console.log(Number(c));
-  console.log(s);
-  results.append(s);
-  return s;
-}
-
+// function add(a,b){
+//   const s = a + b;
+//   return s;
 
 // function subtr(a,b){
 //   const s = a - b;
