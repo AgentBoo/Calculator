@@ -1,8 +1,148 @@
-#window, #results{
-  background-color: #b4ede4;
-  border: solid grey thin;
-  box-sizing: border-box;
-  margin: 20px 0;
-  width: 440px;
-  height: 50px;
+body{
+  background-color: #e0d7d5;
+
+}
+
+h3{
+  color: white;
+  font-family: Arial;
+  font-size: 30px;
+}
+.buttons{
+  border: solid white 30px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  width: 322px;
+  display:grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(10, 40px);
+
+}
+
+button:focus{
+  outline-color: #e2e2e2;
+}
+
+.op{
+  border-color: white;
+  border-radius: 3px;
+}
+.btn{
+  border-color: white;
+  background-color: #e8dccc;
+  box-shadow: none;
+  color: #36384c;
+  font-size: 17.5px;
+  border-radius: 3px;
+}
+
+
+.input{
+  background-color: #75b71f;
+  border-top: outset;
+  border-radius: 3px;
+  grid-column: 3/9;
+  grid-row: 1/3;
+}
+
+.output{
+  background-color: #75b71f;
+  border-bottom: outset;
+  border-radius: 3px;
+  grid-column: 3/9;
+  grid-row: 2/3;
+}
+.zero{
+  grid-column: 1/3;
+  grid-row: 9/11;
+}
+.one{
+  grid-column: 1/3;
+  grid-row: 7/9;
+}
+
+.two{
+  grid-column: 3/5;
+  grid-row: 7/9;
+}
+
+.three{
+  grid-column: 5/7;
+  grid-row: 7/9;
+}
+
+.four{
+  grid-column: 1/3;
+  grid-row: 5/7;
+}
+
+.five{
+  grid-column: 3/5;
+  grid-row: 5/7;
+}
+
+.six{
+  grid-column: 5/7;
+  grid-row: 5/7;
+}
+
+.seven{
+  grid-column: 1/3;
+  grid-row: 3/5;
+}
+
+.eight{
+  grid-column: 3/5;
+  grid-row: 3/5;
+}
+
+.nine{
+  grid-column: 5/7;
+  grid-row: 3/5;
+}
+
+.C{
+  background-color: #81ad26;
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.dec{
+  background-color: #e2e2e2;
+  grid-column: 3/5;
+  grid-row: 9/11;
+}
+
+.ew{
+  background-color: #b5d378;
+  grid-column: 5/7;
+  grid-row: 9/11;
+}
+
+.op{
+  background-color: #65a535;
+}
+
+button:nth-of-type(14){
+  background-color: #f9e43e;
+  grid-column: 7/9;
+  grid-row: 9/11;
+}
+
+button:nth-of-type(15){
+  background-color: #ff8c75;
+  grid-column: 7/9;
+  grid-row: 7/9;
+}
+button:nth-of-type(16){
+  background-color: #ffbe28;
+  grid-column: 7/9;
+  grid-row: 5/7;
+}
+button:nth-of-type(17){
+  background-color: #fc5f4e;
+  grid-column: 7/9;
+  grid-row: 3/5;
 }

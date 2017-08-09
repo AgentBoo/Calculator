@@ -46,15 +46,17 @@ function toDisplay(kitten){
     a.push(kitten.target.id);
     b.push(kitten.target.id);
 
+
     // to brain
-    if (kitten.target.className == "op"){
+    if (kitten.target.id == "op"){
       let number = b.splice(0, b.length-1);
       let operator = b.splice(0, 1);
       memry.push(number);
       memry.push(operator);
-      console.log(JSON.stringify(memry));
+
     }
   } else {
+    memry.push(b);
     recalibrateArray(memry)
     return a;
     }
@@ -63,14 +65,12 @@ function toDisplay(kitten){
 
 // NOTE: Following lines are only for a specific case of array.length = 3 and addition
 function recalibrateArray(memry){
+  console.log(JSON.stringify(memry));
   for (let i = 0; i < memry.length; i++){
-    console.log(memry[i]);
     let sum= [];
 
     for (let j = 0; j < memry[i].length; j++){
       sum += memry[i][j];
-      console.log(sum);
-
     }
     newarray.push(sum);
   }
