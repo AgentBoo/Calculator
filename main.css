@@ -47,7 +47,9 @@ button:focus{
 
 
 .input{
-  font-size: 22px;
+  word-wrap: break-word;
+  overflow-x: scroll;
+  font-size: 17px;
   font-family: Arial;
   color: white;
   padding: 8px;

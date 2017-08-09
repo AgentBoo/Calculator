@@ -36,6 +36,12 @@ let newarray = [];
 
 calcButton.addEventListener("click", toDisplay, false);
 
+// NOTE: proof of concepts
+let f = 3, g = -4;
+let t = f + g;
+console.log(t);
+
+
 // NOTE: Functions in use
 // display what was clicked in a separate teal window, except C and =
 function toDisplay(kitten){
@@ -45,10 +51,10 @@ function toDisplay(kitten){
     win.append(kitten.target.id);
     a.push(kitten.target.id);
     b.push(kitten.target.id);
-
+    console.log(b);
 
     // to brain
-    if (kitten.target.id == "op"){
+    if (kitten.target.className == "op"){
       let number = b.splice(0, b.length-1);
       let operator = b.splice(0, 1);
       memry.push(number);
@@ -67,7 +73,7 @@ function toDisplay(kitten){
 function recalibrateArray(memry){
   console.log(JSON.stringify(memry));
   for (let i = 0; i < memry.length; i++){
-    let sum= [];
+    let sum = [];
 
     for (let j = 0; j < memry[i].length; j++){
       sum += memry[i][j];
@@ -76,6 +82,21 @@ function recalibrateArray(memry){
   }
   console.log(newarray);
 }
+
+
+function recalibrateValues(newarray){
+  console.log(JSON.stringify(newarray));
+  for (let i = 0; i < memry.length; i++){
+  let sum = [];
+
+  for (let j = 0; j < memry[i].length; j++){
+    sum += memry[i][j];
+  }
+  newarray.push(sum);
+}
+console.log(newarray);
+}
+
 
 
 // NOTE: Individual arithmetic functions
