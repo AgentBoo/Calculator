@@ -50,11 +50,10 @@ console.log(t);
 // NOTE: Functions in use
 // display what was clicked in a separate teal window, except C and =
 function toDisplay(kitten){
-  let array = [];
+  resultsArray = [];
 
 
   if(kitten.target !== kitten.currentTarget && kitten.target.id == "clear"){
-
 
     let parSidepanel = document.createElement("p");
     parSidepanel.classList.add('memoryEntries');
@@ -75,6 +74,7 @@ function toDisplay(kitten){
 
       win.append="";
   }
+
   else if(kitten.target !== kitten.currentTarget && kitten.target.id !== "="){
     //to display
     win.append(kitten.target.id);
@@ -88,11 +88,14 @@ function toDisplay(kitten){
       let operator = b.splice(0, 1);
       memry.push(number);
       memry.push(operator);
+      console.log(JSON.stringify(memry));
 
     }
   } else {
 
     memry.push(b);
+    b =[];
+    console.log(b);
     recalibrateArray(memry);
 
 
@@ -110,6 +113,7 @@ function recalibrateArray(memry){
   for (let i = 0; i < memry.length; i++){
     let sum = [];
 
+// NOTE: concatenating strings
     for (let j = 0; j < memry[i].length; j++){
       sum += memry[i][j];
     }
@@ -153,6 +157,7 @@ function recalibrateValues(newarray){
 }
 
 function assignSign(newarray){
+  console.log(newarray);
   let final=[];
   let calc = "";
   for (let i = 0; i < newarray.length; i++){
@@ -163,7 +168,9 @@ function assignSign(newarray){
       console.log(resultsArray);
     }
   }
+  console.log(newarray[0]);
   resultsArray.push(newarray[0]);
+  // newarray = [];
   console.log(resultsArray);
   summarize(resultsArray);
 }
@@ -173,7 +180,7 @@ function summarize(resultsArray){
 
   for(let i = 0; i < resultsArray.length;i++){
   whops += Number(resultsArray[i]);
-
+  console.log(whops);
   }
 
   if (whops == Infinity){
@@ -182,7 +189,6 @@ function summarize(resultsArray){
   console.log(win);
 
   a=[];
-  b=[];
   memry=[];
   newarray=[];
 
@@ -193,12 +199,11 @@ function summarize(resultsArray){
   win.innerHTML = whops;
 
   a=[];
-  b=[];
   memry=[];
   newarray=[];
   resultsArray=[];
   b.push(whops);
-
+  return whops;
 }
 }
 
