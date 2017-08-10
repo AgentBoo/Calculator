@@ -80,6 +80,7 @@ function toDisplay(kitten){
   } else {
     memry.push(b);
     recalibrateArray(memry);
+
     // realresults.innerHTML =
     // `<div class="output" id="results">${newarray}</div>`
     // calcButton.replaceChild(results, realresults);
@@ -157,15 +158,22 @@ function summarize(resultsArray){
   whops += Number(resultsArray[i]);
 
   }
-  console.log(whops);
-  console.log(win);
+
   a=[];
   b=[];
   memry=[];
   newarray=[];
 
   resultsArray=[];
+
+  if (whops == Infinity){
+    win.innerHTML = "... pfff :D"
+  console.log(whops);
+  console.log(win);
+} else {
   win.innerHTML = whops;
+
+}
 }
 
 
