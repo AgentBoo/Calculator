@@ -3,15 +3,18 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
     <title> Calculator </title>
   </head>
 
   <body>
     <div class="calcContain">
-      <h3> Cacalater </h3>
+      <h3> The Cacalater Calculator </h3>
+      <div class="buttonsBackground">
       <div class="buttons">
         <div class="input" id="window"></div>
-        <div class="output" id="results"></div>
+        <!-- <div class="output" id="results"></div> -->
 
         <button class="btn zero" id="0">0</button>
         <button class="btn one" id="1">1</button>
@@ -23,17 +26,23 @@
         <button class="btn seven" id="7">7</button>
         <button class="btn eight" id="8">8</button>
         <button class="btn nine" id="9">9</button>
-        <button class="btn C" id="clear">C</button>
+        <button class="op C" id="clear">C</button>
         <button class="btn dec" id=".">.</button>
-        <button class="btn ew" id="=">=</button>
+        <button class="op ew" id="=">=</button>
         <button class="op" id="+">+</button>
         <button class="op" id="-">-</button>
         <button class="op" id="x">x</button>
         <button class="op" id="/">/</button>
       </div>
-  </div>
+    </div>
 
+  </div>
+<div class="memory" id="memory">
+</div>
+
+<span style="font-style:italic; position: absolute; bottom: 40px"> Note: Please use the clear button after every completed calculation. Do not continue using the previous result for further calculations (yet...). </span>
     <script src="main_copy.js"></script>
   </body>
+
 
 </html>

@@ -25,9 +25,11 @@ let op = ["C", ".", "=", "+", "-", "x", "/"];
 
 // NOTE: Setup
 const calcButton = document.querySelector(".buttons");
-const results = document.getElementById("results");
+// const results = document.getElementById("results");
 const win = document.getElementById("window");
 let realresults = document.createElement("div");
+let sidepanel = document.getElementById("memory");
+
 
 
 //this is my single memory
@@ -49,13 +51,24 @@ console.log(t);
 // display what was clicked in a separate teal window, except C and =
 function toDisplay(kitten){
   let array = [];
+
+
   if(kitten.target !== kitten.currentTarget && kitten.target.id == "clear"){
+
+
+    let parSidepanel = document.createElement("p");
+    parSidepanel.classList.add('memoryEntries');
+    parSidepanel.append(`${win.textContent}`);
+    sidepanel.append(parSidepanel);
+
     memry = [];
     a = [];
     b = [];
     newarray = [];
     resultsArray = [];
+
     win.innerHTML="";
+
   }
 
   else if (kitten.target !== kitten.currentTarget && (kitten.target.id == "window" || kitten.target.id =="results")){
@@ -78,8 +91,11 @@ function toDisplay(kitten){
 
     }
   } else {
+
     memry.push(b);
     recalibrateArray(memry);
+
+
 
     // realresults.innerHTML =
     // `<div class="output" id="results">${newarray}</div>`
@@ -144,9 +160,10 @@ function assignSign(newarray){
       final = newarray.slice(i, i+2);
       calc = final[0]+final[1];
       resultsArray.push(calc);
-      // summarize(resultsArray);
+      console.log(resultsArray);
     }
-  } resultsArray.push(newarray[0]);
+  }
+  resultsArray.push(newarray[0]);
   console.log(resultsArray);
   summarize(resultsArray);
 }
@@ -159,6 +176,11 @@ function summarize(resultsArray){
 
   }
 
+  if (whops == Infinity){
+    win.innerHTML = "... pfff :D"
+  console.log(whops);
+  console.log(win);
+
   a=[];
   b=[];
   memry=[];
@@ -166,12 +188,16 @@ function summarize(resultsArray){
 
   resultsArray=[];
 
-  if (whops == Infinity){
-    win.innerHTML = "... pfff :D"
-  console.log(whops);
-  console.log(win);
+
 } else {
   win.innerHTML = whops;
+
+  a=[];
+  b=[];
+  memry=[];
+  newarray=[];
+  resultsArray=[];
+  b.push(whops);
 
 }
 }
