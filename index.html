@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
-    <title> Calculator </title>
-  </head>
+  <title> Calculator | ZH </title>
+</head>
 
-  <body>
-    <div class="calcContain">
-      <h3> The Cacalater Calculator </h3>
-      <div class="buttonsBackground">
-      <div class="buttons">
-        <div type="text" class="input" id="window"></div>
-        <!-- <div class="output" id="results"></div> -->
+<body>
+  <div class="calcContain">
+    <h3> The Cacalater Calculator </h3>
 
-        <button class="btn zero" id="0">0</button>
-        <button class="btn one" id="1">1</button>
-        <button class="btn two" id="2">2</button>
-        <button class="btn three" id="3">3</button>
-        <button class="btn four" id="4">4</button>
-        <button class="btn five" id="5">5</button>
-        <button class="btn six" id="6">6</button>
-        <button class="btn seven" id="7">7</button>
-        <button class="btn eight" id="8">8</button>
-        <button class="btn nine" id="9">9</button>
-        <button class="op C" id="clear">C</button>
-        <button class="btn dec" id=".">.</button>
-        <button class="op ew" id="=">=</button>
-        <button class="op" id="+">+</button>
-        <button class="op" id="-">-</button>
-        <button class="op" id="x">x</button>
-        <button class="op" id="/">/</button>
+    <div class="calcContain-subdiv">
+      <div class="calcButtons">
+        <!-- NOTE: Input and Outup windows -->
+        <div type="text" class="c-input f-input s-input" id="inputWindow"></div>
+        <!-- <div class="c-output f-output s-output" id="outputWindow"></div> -->
+
+        <!-- NOTE: Individual Buttons -->
+        <button value="0"   class="btn zero" id="0"> 0 </button>
+        <button value="1"   class="btn one" id="1"> 1 </button>
+        <button value="2"   class="btn two" id="2"> 2 </button>
+        <button value="3"   class="btn three" id="3"> 3 </button>
+        <button value="4"   class="btn four" id="4"> 4 </button>
+        <button value="5"   class="btn five" id="5"> 5 </button>
+        <button value="6"   class="btn six" id="6"> 6 </button>
+        <button value="7"   class="btn seven" id="7"> 7 </button>
+        <button value="8"   class="btn eight" id="8"> 8 </button>
+        <button value="9"   class="btn nine" id="9"> 9 </button>
+        <button value="."   class="btn dec" id="."> . </button>
+
+        <button value="clear"  class="op C" id="clear"> C </button>
+        <button value="="      class="op ew" id="="> = </button>
+        <button value="+"      class="op" id="+"> + </button>
+        <button value="-"      class="op" id="-"> - </button>
+        <button value="x"      class="op" id="x"> x </button>
+        <button value="/"      class="op" id="/"> / </button>
       </div>
     </div>
-
   </div>
-<div class="memory" id="memory">
+
+  <div class="c-outputLog f-outputLog s-outputLog" id="outputLog">
 </div>
 
-<span style="font-style:italic; position: absolute; bottom: 40px"> </span>
-    <script src="main_copy.js"></script>
-  </body>
+  <span style="font-style:italic; position: absolute; bottom: 40px"> </span>
+  <script src="main_copy.js"></script>
+</body>
 
 
 </html>
